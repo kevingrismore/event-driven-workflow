@@ -4,7 +4,7 @@
 
 # Create Mainframe Webhook
 prefect cloud webhook create mainframe \
-    --description "For emitting events from the Control-M/Mainframe side" \
+    --description "For emitting events from the Mainframe side" \
     --template '{ "event": "{{ body.event_name }}", "resource": { "prefect.resource.id": "prefect.webhook.mainframe", "prefect.resource.name": "prefect.webhook.mainframe", "stage": "{{ body.stage }}", "file_name": "{{ body.file_name }}", "trackingId": "{{ body.trackingId }}" } }'
 
 # Create Azure Storage Webhook
