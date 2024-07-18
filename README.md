@@ -35,7 +35,7 @@ Go find this webhook in the Prefect UI by clicking `Configuration` then `Webhook
 
 <div style="display: flex; align-items: flex-start;">
   <img src="images/left_hand_nav.png" alt="Left hand nav" width="100"/>
-  <img src="images/first_webhook.png" alt="Second image" width="250" style="margin-left: 20px;"/>
+  <img src="images/first_webhook_1.png" alt="Second image" width="250" style="margin-left: 20px;"/>
 </div>
 
 
@@ -75,7 +75,7 @@ prefect cloud webhook create reconciliation \
 You should now see these webhooks in your workspace:
 
 <div style="display: flex; align-items: flex-start;">
-  <img src="images/all_webhooks.png" alt="Left hand nav" width="400"/>
+  <img src="images/all_webhooks_4.png" alt="Left hand nav" width="400"/>
 </div>
 
 ## Serve the Flow 
