@@ -14,10 +14,10 @@ prefect cloud webhook create azure-storage \
 
 # Create Summary Webhook
 prefect cloud webhook create summary \
-    --description "For the summary event originating from Azure Function" \
+    --description "For the summary event originating from the event emitter" \
     --template '{ "event": "Summary", "resource": { "prefect.resource.id": "prefect.webhook.summary", "prefect.resource.name": "prefect.webhook.summary", "totalRecordsSent": "{{ body.totalRecordsSent }}", "trackingId": "{{ body.trackingId }}" } }'
 
 # Create Reconciliation Webhook
 prefect cloud webhook create reconciliation \
-    --description "For the reconciliation event originating from the java event transformation system in k8s" \
+    --description "For the reconciliation event originating from the event consumer" \
     --template '{ "event": "Reconciliation", "resource": { "prefect.resource.id": "prefect.webhook.reconciliation", "prefect.resource.name": "prefect.webhook.reconciliation", "totalRecordsReceived": "{{ body.totalRecordsReceived }}", "trackingId": "{{ body.trackingId }}" } }'

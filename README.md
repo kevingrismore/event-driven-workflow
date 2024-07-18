@@ -58,7 +58,7 @@ prefect cloud webhook create azure-storage \
     --template '{ "event": "{{body[0].eventType}}", "payload": { "topic": "{{body[0].topic}}", "subject": "{{body[0].subject}}", "eventType": "{{body[0].eventType}}", "eventTime": "{{body[0].eventTime}}", "id": "{{body[0].id}}", "data": { "api": "{{body[0].data.api}}", "clientRequestId": "{{body[0].data.clientRequestId}}", "requestId": "{{body[0].data.requestId}}", "eTag": "{{body[0].data.eTag}}", "contentType": "{{body[0].data.contentType}}", "contentLength": "{{body[0].data.contentLength}}", "blobType": "{{body[0].data.blobType}}", "url": "{{body[0].data.url}}", "sequencer": "{{body[0].data.sequencer}}", "storageDiagnostics": { "batchId": "{{body[0].data.storageDiagnostics.batchId}}" } }, "dataVersion": "", "metadataVersion": "1" }, "resource": { "prefect.resource.id": "{{ body[0].data.url }}", "url": "{{body[0].data.url}}" } }'
 ```
 
-#### Summary Webhook from Azure Function
+#### Summary Webhook from event emitter
 
 ```bash
 prefect cloud webhook create summary \
@@ -66,7 +66,7 @@ prefect cloud webhook create summary \
     --template '{ "event": "Summary", "resource": { "prefect.resource.id": "prefect.webhook.summary", "prefect.resource.name": "prefect.webhook.summary", "totalRecordsSent": "{{ body.totalRecordsSent }}", "trackingId": "{{ body.trackingId }}" } }'
 ```
 
-#### Reconciliation Webhook from Java Event Transformation System
+#### Reconciliation Webhook from event consumer
 ```bash
 prefect cloud webhook create reconciliation \
     --description "For the reconciliation event originating from the event consumer" \
